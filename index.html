@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>422240144 陈业勤</title>
+    <!--中间部分页面效果-->
+    <link rel="stylesheet" href="./css/myfront/iconfont.css">
+    <link rel="stylesheet" href="./css/font-awesome.css">  
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body id="body">
+    <div class="nav">
+        <input type="checkbox" id="togglebox">
+        <ul>
+            <div class="part">首页</div>
+            <div class="part" id="juqin">剧情介绍</div>
+            <div class="part" id="juese">角色介绍</div>
+            <div class="part" id="login">登录/注册</div>
+        </ul>
+    </div>
+    <label class="menu" for="togglebox"><img src="./images/menu.png" alt=""></label>
+    <div class="main" id="main">
+        <div class="head"><h2 id="head">四月是你的谎言</h2></div>
+                <div class="home" id="home">
+                    <div class="left">
+                        <div class="tree">
+                            <span class="ban ban1 shake1"></span>
+                            <span class="ban ban2 shake2"></span>
+                        </div>
+                        <i class="iconfont icon-arrow-left-circle" id="left"></i>
+                    </div>
+                    <div class="right">
+                        <i class="iconfont icon-arrow-right-circle" id="right"></i>
+                    </div>
+                </div>
+                <!--中间部分页面效果：46-->
+                <div class="content">
+                    <div id="juqin-po"><h2>剧情介绍</h2></div>
+                    <p id="intro1">该动画讲述了钢琴少年有马公生因母亲
+                        离世的阴影而无法在演奏时听到琴声，
+                        最终在小提琴手宫园薰的帮助和鼓励下重拾钢琴梦想的故事。</p>
+                        <br><br>
+                    <div id="juese-po"><h2>角色介绍</h2></div>
+                    <ul>
+                        <li>
+                            <img src="./img/si/nan1.jpg" alt="" class="person" id="i1">
+                            <p id="p1">有马公生：天才钢琴手，自小便在母亲严厉的指导下练习钢琴，并在国内比赛
+                                中拥有优秀成绩。因母亲的去世而开始逃避钢琴，直到遇到宫园薰后重新
+                                开始弹奏钢琴。</p>
+                        </li>
+                        <li>
+                            <img src="./img/si/nv1.jpg" alt="" class="person" id="i2">
+                            <p id="p2">
+                                宫园薰：女主角，外表开朗坚强的小提琴家原本学习钢琴，因有马公生的
+                                影响成为小提琴手。她原本性格缺乏自信，身体一直体弱多病，但在得知
+                                自己时日无多之时，开始转变性格去生活每一天。
+                            </p>
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <li>
+                            <img src="./img/si/nan2.jpg" alt="" class="person" id="i3">
+                            <p id="p3">渡亮太：漫画中的男二号，市立墨谷中学初三学生，公生和椿的青梅竹马，
+                                足球社社长。他看似花心但内心明理，时常能说出一些有深意的话语。</p>
+                        </li>
+                        <li>
+                            <img src="./img/si/nv2.jpg" alt="" class="person" id="i4">
+                            <p id="p4">
+                                泽部椿：有马公生的青梅竹马，市立墨谷中学初三学生，住在公生家隔壁。
+                                她强烈希望公生能够再次弹钢琴，并为此努力。
+                            </p>
+                        </li>
+                    </ul>
+                    <ul class="last" id="last">
+                        <li>
+                            <img src="./img/tian/xiamei.jpg" alt="" class="person">
+                            <p>须贺夏美：一边在须贺事务所工作、
+                                一边在外面奔走采访的女大学生。须贺圭介的侄女，对帆高照顾有加，支持阳菜与帆高两人的爱情。
+                                不认可阳菜献祭命运。作为监督人照顾阳菜与她弟弟两人的生活。</p>
+                        </li>
+                    </ul>
+                    <div><h2>视频</h2></div>
+                    <br>
+                    <div class="player">
+                        <video src="./viedo/si.mp4" id="video"></video>
+                        <div class="controls">
+                            <!-- 播放暂停 -->
+                            <i  class="switch iconfont icon-play-circle" id="play"></i>
+                            <!-- 播放进度 -->
+                            <div class="progress" >
+                                <div class="line" id="line"></div>
+                                <div class="bar" id="bar"></div>
+                            </div>
+                            <!-- 当前播放时长/播放总时长 -->
+                            <div class="timer">
+                                <span class="current" id="current">00:00</span>/<span class="total" id="total">00:00</span>
+                            </div>
+                            <!-- 全屏/取消全屏 -->
+                            <i  class="expand iconfont icon-quanping" id="expand"></i>
+                        </div>
+                    </div>
+                </div>
+                
+    </div>
+</body>
+    <script src="./js/video.js"></script>
+    <script>
+        var sta=1;
+        var body=document.getElementById('body');
+        var left=document.getElementById('left');
+        var right=document.getElementById('right');
+        var head=document.getElementById('head');
+        var login=document.getElementById('login');
+        var main=document.getElementById('main');
+        var home=document.getElementById('home');
+        var intro1=document.getElementById('intro1');
+        var last=document.getElementById('last');
+
+        var i1=document.getElementById('i1');
+        var i2=document.getElementById('i2');
+        var i3=document.getElementById('i3');
+        var i4=document.getElementById('i4');
+
+        var p1=document.getElementById('p1');
+        var p2=document.getElementById('p2');
+        var p3=document.getElementById('p3');
+        var p4=document.getElementById('p4');
+
+        var video=document.getElementById('video');
+        var line=document.getElementById('line');//获取当前长度
+        
+        var juqin=document.getElementById('juqin');
+        var juqinpo=document.getElementById('juqin-po');
+        var juese=document.getElementById('juese');
+        var juesepo=document.getElementById('juese-po');
+        juqin.onclick=function(){
+            document.documentElement.scrollTop=juqinpo.offsetTop;
+        }
+        juese.onclick=function(){
+            document.documentElement.scrollTop=juesepo.offsetTop;
+        }
+        
+        var curindex=0;
+        var time=3000;
+        var arr=new Array();
+        arr[0]="url(./img/si/1.jpg)";
+        arr[1]="url(./img/si/2.jpg)";
+        arr[2]="url(./img/si/3.jpg)";
+        setInterval(changeImg,time);
+
+        login.onclick=function(){
+            window.location.href="./login.html";
+        }
+        function changeImg(){
+            if(curindex==arr.length-1){
+                curindex=0;
+            }
+            else curindex+=1;
+            home.style.backgroundImage=arr[curindex];
+        }
+        function change(){
+            
+            if(sta==1){
+                arr[0]="url(./img/si/2.jpg)";
+                arr[1]="url(./img/si/1.jpg)";
+                arr[2]="url(./img/si/3.jpg)";
+                body.style.backgroundColor='#f3dbde';
+                head.innerHTML='四月是你的谎言';
+                head.style.textShadow='5px 5px 5px rgb(240, 123, 213)';
+                last.style.display='none';
+                main.style.backgroundImage='url(./img/si/op0.7.jpg)';
+                //home.style.backgroundImage='url(./img/si/1.jpg)';
+                intro1.innerHTML="该动画讲述了钢琴少年有马公生因母亲离世的阴影而无法在演奏时听到琴声，最终在小提琴手宫园薰的帮助和鼓励下重拾钢琴梦想的故事。";
+                i1.src='./img/si/nan1.jpg';
+                i2.src='./img/si/nv1.jpg';
+                i3.src='./img/si/nan2.jpg';
+                i4.src='./img/si/nv2.jpg';
+                p1.innerHTML="有马公生：天才钢琴手，自小便在母亲严厉的指导下练习钢琴，并在国内比赛中拥有优秀成绩。因母亲的去世而开始逃避钢琴，直到遇到宫园薰后重新开始弹奏钢琴。";
+                p2.innerHTML="宫园薰：女主角，外表开朗坚强的小提琴家原本学习钢琴，因有马公生的影响成为小提琴手。她原本性格缺乏自信，身体一直体弱多病，但在得知自己时日无多之时，开始转变性格去生活每一天。";
+                p3.innerHTML="渡亮太：漫画中的男二号，市立墨谷中学初三学生，公生和椿的青梅竹马，足球社社长。他看似花心但内心明理，时常能说出一些有深意的话语。";
+                p4.innerHTML="泽部椿：有马公生的青梅竹马，市立墨谷中学初三学生，住在公生家隔壁。她强烈希望公生能够再次弹钢琴，并为此努力。";
+                video.src='./viedo/si.mp4';
+                
+            }
+            if(sta==2){
+                arr[0]="url(./img/tian/1.jpg)";
+                arr[1]="url(./img/tian/2.jpg)";
+                arr[2]="url(./img/tian/3.jpg)";
+                body.style.backgroundColor='#4baad6';
+                head.innerHTML='天气之子';
+                head.style.textShadow='5px 5px 5px rgb(123, 174, 240)';
+                last.style.display='block';
+                main.style.backgroundImage='url(./img/tian/bgi.jpg)';
+                //home.style.backgroundImage='url(./img/tian/1.jpg)';
+                intro1.innerHTML=" “想尝试前往，那道光芒之中” <br>高一的夏天，帆高从离岛离家出走，来到东京。但是很快"+
+                       "他的生活就陷入了拮据，只能孤苦伶仃地度日，之后他终于找到了一份工作，是为古怪的超自然杂志撰稿。"+
+                        "连日不断的降雨，仿佛是在预示他接下来的命运。此时，在喧嚣的都市一角，帆高与一位少女相遇"+
+                        "其名为“阳菜”,因为某些事，现在她与弟弟两人一起开朗坚强地生活。而她，拥有不可思议的能力。<br>"+
+                        "“呐，现在开始就要放晴了哦”<br>"+
+                        "雨逐渐停止，街道笼罩在美丽的光芒中。那是仅仅在心中祈祷，就能让天空放晴的力量。"
+                i1.src='./img/tian/nan1.jpg';
+                i2.src='./img/tian/nv1.jpg';
+                i3.src='./img/tian/zhi.jpg';
+                i4.src='./img/tian/guijie.jpg';
+                p1.innerHTML="森岛帆高：一个为了追逐光芒而离开偏远岛屿家乡的高中生。他离开了岛上的家来到东京，找到一份在超自然现象杂志出版社的工作。但自从他参加新工作以来，天气一直很糟，每天都下雨。"
+                p2.innerHTML="天野阳菜：阳菜似乎可以控制天气，当她祈祷时雨就停了，随着她合拢的双手雨水就会被吸回天空。在城市的一角，帆高与阳菜相遇了。"
+                p3.innerHTML="天野凪：阳菜的弟弟，小学四年级学生。因让森岛帆高认清对自己姐姐天野阳菜的爱慕，故被帆高尊称为“前辈”。支持姐姐阳菜与帆高两人的恋情。虽然才是小学生，但是言行举止很成熟，很受女孩子欢迎。"
+                p4.innerHTML="须贺圭介：作家，雇佣了帆高，二人相遇于开往东京的船上。前期支持阳菜献祭命运，后期被帆高感化支援他救回阳菜。作为监督人照顾阳菜与她弟弟两人的生活。"
+                video.src='./viedo/tian.mp4';
+            }
+            changeImg();
+            video.currentTime=0;
+            line.style.width=0;
+        }
+        change();
+        left.onclick=function(){
+            if(sta==1){
+                sta=2;
+            }
+            else sta-=1;
+            change();
+            left.style.display='none';
+            right.style.display='inline';
+            main.style.animation='le 0.8s linear';
+        }
+        right.onclick=function(){
+            if(sta==2){
+                sta=1;
+            }
+            else sta+=1;
+            change();
+            left.style.display='inline';
+            right.style.display='none';
+            main.style.animation='ri 0.8s linear';
+        }
+        
+
+
+    </script>
+</html>

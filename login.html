@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户登录</title>
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+    <nav>
+        <div class="left" id="btnlogin">登录</div>
+        <div class="right" id="btnregister">注册</div>
+    </nav>
+    <form action="#" id="login">
+        <div class="login">
+            <input type="text" name="name" placeholder="用户名" class="t">
+            <input type="password" name="password" placeholder="密码" class="t" id="password">
+            <br>
+            <input type="submit" name="submit" value="登录" class="btn">
+            <div class="img">
+                <div class="left"><img src="./images/22-open.png" alt="" id="left"></div>
+                <div class="right"><img src="./images/33-open.png" alt="" id="right"></div>
+            </div>
+        </div>
+    </form>
+    <form action="#" id="register">
+        <h2>用户注册</h2>
+        <div class="content">
+
+            <div class="li">
+                <div class="left">昵称：</div>
+                <div class="right">
+                    <input type="text" id="name" name="name" autocomplete="off" required pattern="^[a-zA-Z0-9_-]{6,16}$">
+                </div>
+            </div>
+            <div class="li">
+                <div class="left">注册邮箱：</div>
+                <div class="right">
+                    <input type="email" id="mail" name="mail" autocomplete="off" required pattern="^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$">
+                </div>
+            </div>
+            <div class="li">
+                <div class="left">密码：</div>
+                <div class="right">
+                    <input type="password" id="password" name="password" maxlength="8" autocomplete="off" required pattern="^[a-zA-Z0-9]{8}$" placeholder="输入8位密码">
+                </div>
+            </div>
+            <div class="li">
+                <div class="left">性别：</div>
+                <div class="right">
+                    <input type="radio" id="male1" name="male">
+                        <label for="male1">男</label>
+                    <input type="radio" id="male2" name="male">
+                        <label for="male2">女</label>
+                </div>
+            </div>
+            <div class="li">
+                <div class="left">年龄：</div>
+                <div class="right">
+                    <input type="number" id="age" name="age"  required min="0" max="200">
+                </div>
+            </div>
+            <div class="li intro" >
+                <div class="left">自我介绍：</div>
+                <div class="right">
+                    <textarea name="intro" required placeholder="Please enter your message"></textarea>
+                </div>
+            </div>
+            <div class="sub">
+                <input type="submit" class="submit" value="立即注册">
+            </div>
+            
+        </div>
+    </form>
+</body>
+    <script>
+        var password=document.getElementById('password');
+        var left=document.getElementById('left');
+        var right=document.getElementById('right');
+        window.onclick=function(e){
+            console.log(e);
+            console.log(window);
+            window.moveTo(0,50);
+            if(e.target.id=='password'){
+                
+                left.src='./images/22_close.png';
+                right.src='./images/33_close.png';
+            }
+            else{
+                left.src='./images/22-open.png';
+                right.src='./images/33-open.png';
+            }
+        }
+
+
+        var btnlogin=document.getElementById('btnlogin');
+        var login=document.getElementById('login');
+        var btnregister=document.getElementById('btnregister');
+        var register=document.getElementById('register');
+        register.style.display='none';
+        btnlogin.onclick=function(){
+            register.style.display='none';
+            login.style.display='block';
+            btnlogin.style.borderBottom='2px solid black';
+            btnregister.style.borderBottom='none';
+        }
+        btnregister.onclick=function(){
+            register.style.display='block';
+            login.style.display='none';
+            btnlogin.style.borderBottom='none';
+            btnregister.style.borderBottom='2px solid black';
+        }
+    </script>
+</html>
